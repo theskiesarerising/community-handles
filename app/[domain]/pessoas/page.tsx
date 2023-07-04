@@ -48,10 +48,10 @@ export default async function CommunityPage({ params }: Props) {
           .
         </p> */}
         <Tabs defaultValue="domain" className="mt-8">
-          <TabsList>
-            <TabsTrigger value="domain">{domain}</TabsTrigger>
+          {/* <TabsList>
+            <TabsTrigger value="domain">{domain.name}</TabsTrigger>
             <TabsTrigger value="all">todos</TabsTrigger>
-          </TabsList>
+          </TabsList> */}
           <TabsContent value="domain">
             <div className="mt-6 grid w-full grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
               {initialProfiles
