@@ -3,6 +3,8 @@ import { AppBskyActorDefs } from "@atproto/api"
 
 import { agent } from "@/lib/atproto"
 import { prisma } from "@/lib/db"
+import { Link } from "@/components/link"
+import { LoadMore } from "@/components/load-more"
 import { Profile } from "@/components/profile"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
@@ -34,51 +36,16 @@ export default async function CommunityPage({ params }: Props) {
   ])
 
   return (
-    <main className="container grid items-center gap-6 pb-8 pt-6 md:py-10">
+    <main className="container grid gap-6 items-center pt-6 pb-8 md:py-10">
       <div className="flex max-w-[980px] flex-col items-start gap-4">
-        <h1 className="text-3xl font-extrabold leading-tight tracking-tighter sm:text-3xl md:text-5xl lg:text-6xl">
-          Comunidade <span className="underline underline-offset-8">{domain}</span>
-        </h1>
-        {/* <p className="max-w-[500px] text-lg text-muted-foreground sm:text-xl">
-          Want to join the {members.length} members of the {domain}{" "}
-          community? Get your own{" "}
-          <Link href="/" className="underline">
-            {domain} handle
-          </Link>
-          .
-        </p> */}
-        <Tabs defaultValue="domain" className="mt-8">
-          {/* <TabsList>
-            <TabsTrigger value="domain">{domain.name}</TabsTrigger>
-            <TabsTrigger value="all">todos</TabsTrigger>
-          </TabsList> */}
-          <TabsContent value="domain">
-            <div className="mt-6 grid w-full grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
-              {initialProfiles
-                .filter((profile) => profile.handle.endsWith(domain))
-                .map((profile) => (
-                  <a
-                    href={`https://bsky.app/profile/${profile.handle}`}
-                    key={profile.did}
-                  >
-                    <Profile profile={profile} />
-                  </a>
-                ))}
-            </div>
-          </TabsContent>
-          <TabsContent value="all">
-            <div className="mt-6 grid w-full grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
-              {initialProfiles.map((profile) => (
-                <a
-                  href={`https://bsky.app/profile/${profile.handle}`}
-                  key={profile.did}
-                >
-                  <Profile profile={profile} />
-                </a>
-              ))}
-            </div>
-          </TabsContent>
-        </Tabs>
+        <LoadMore
+          domain={domain}
+          className="grid overflow-hidden grid-cols-1 gap-4 mt-8 w-full sm:grid-cols-2 md:grid-cols-3"
+          loadMoreAction={loadMoreUsers}
+          initialOffset={nextOffset}
+        >
+          <ProfileListSection profiles={initialProfiles} />
+        </LoadMore>
       </div>
     </main>
   )

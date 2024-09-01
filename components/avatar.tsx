@@ -1,7 +1,7 @@
-/* eslint-disable @next/next/no-img-element */
 "use client"
 
 import * as React from "react"
+import Image from "next/image"
 
 import { cn } from "@/lib/utils"
 
@@ -25,10 +25,12 @@ export function Avatar({
       )}
     >
       {src && (
-        <img
+        <Image
           className="aspect-square size-full"
           src={src.replace("avatar", "avatar_thumbnail")}
           alt={alt}
+          width={128}
+          height={128}
           onLoad={() => setLoaded(true)}
         />
       )}

@@ -1,4 +1,5 @@
 import { type Metadata, type Viewport } from "next"
+import { Analytics } from "@vercel/analytics/react"
 
 import { fontSans } from "@/lib/fonts"
 import { cn } from "@/lib/utils"
@@ -9,11 +10,17 @@ import "@/styles/globals.css"
 
 export const metadata: Metadata = {
   icons: {
-    icon: "
-    icon: "data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦋</text></svg>",",
+    icon: "/favicon.ico",
     shortcut: "/favicon-16x16.png",
     apple: "/apple-touch-icon.png",
   },
+}
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "white" },
+    { media: "(prefers-color-scheme: dark)", color: "black" },
+  ],
 }
 
 export const viewport: Viewport = {
@@ -32,7 +39,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
     <>
       <html lang="en" suppressHydrationWarning>
         <head>
-          {/* <Analytics /> */}
+          <Analytics />
         </head>
         <body
           className={cn(
