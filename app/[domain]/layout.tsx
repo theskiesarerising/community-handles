@@ -10,6 +10,7 @@ interface Props {
 }
 
 export default function DomainLayout({ children, params }: Props) {
+  const domain = params.domain
   return (
     <>
       <NextPlausible
@@ -21,7 +22,7 @@ export default function DomainLayout({ children, params }: Props) {
       <SiteHeader items={siteConfig.mainNav}>
         <MainNav title={params.domain} items={siteConfig.mainNav} />
       </SiteHeader>
-      <div className="flex flex-1 flex-col">{children}</div>
+      <div className="flex flex-col flex-1">{children}</div>
     </>
   )
 }
