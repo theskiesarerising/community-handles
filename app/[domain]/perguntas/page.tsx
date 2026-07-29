@@ -65,7 +65,7 @@ export default function CommunityPage({ params }: Props) {
         </Stage>
         <Stage title="Tenho um domínio e queria um site igual a esse, como faço?" number={"❔"} last>
           <p className="max-w-lg">
-            O código do {domain} está <a href="https://github.com/breakzplatform/pessoas.dev">disponível no GitHub</a>, basta fazer seu fork e dar deploy. O {domain} é baseado no projeto <a href="https://github.com/mozzius/community-handles">Community Handles</a>, também disponível no GitHub.
+            O código do {domain} está <a href="https://github.com/theskiesarerising/heavymetalisthe.law">disponível no GitHub</a>, basta fazer seu fork e dar deploy. O {domain} é baseado no projeto <a href="https://github.com/mozzius/community-handles">Community Handles</a>, também disponível no GitHub.
           </p>
         </Stage>
         <Stage title="Não sou programador, mas tenho uma comunidade e quero um site assim. Me ajuda?" number={"❔"} last>
@@ -81,7 +81,7 @@ export default function CommunityPage({ params }: Props) {
             Eu não sou de comentar preço de serviço no geral, mas como é do meu mesmo, creio estar autorizado: Sou obrigado a concordar. É caro mesmo. Meu tempo é caro, e por um breve período, será dedicado 100% a você, com todo profissionalismo esperado, caso contrate o serviço.
           </p>
           <p className="max-w-lg">
-            Reforçando que o código é aberto e está disponível, gratuitamente, no <a href="https://github.com/breakzplatform/pessoas.dev">GitHub</a>.
+            Reforçando que o código é aberto e está disponível, gratuitamente, no <a href="https://github.com/theskiesarerising/heavymetalisthe.law">GitHub</a>.
           </p>
         </Stage>
       </div>

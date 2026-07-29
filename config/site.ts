@@ -15,6 +15,6 @@ export const siteConfig = {
     home: "https://joseli.to",
     notx: "https://notx.blue",
     bluesky: "https://bsky.app/profile/joseli.to",
-    github: "https://github.com/breakzplatform/pessoas.dev",
+    github: "https://github.com/theskiesarerising/heavymetalisthe.law",
   },
 }
