@@ -4,7 +4,7 @@ export const siteConfig = {
   mainNav: [
     {
       title: "Diretório",
-      href: "/pessoas",
+      href: "/metaleiros",
     },
     {
       title: "FAQ",
